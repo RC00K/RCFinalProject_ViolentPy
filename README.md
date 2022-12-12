@@ -2,8 +2,21 @@
 Ryder Cook
 ## **Final Project**
 ## _Description_
-This is a portfolio website that shows my skills, and services that I offer for digital content creation.
-It uses Python, SQL, HTML, and Bootstrap. Users have the ability to create and account to leave feedback on my work. It utilizes the SQL to generate tables for incoming posts, as well as creating users. To get started read the instructions below.
+Using python for hacking and web automation task has become more frequent due to the ability 
+to write complex tasks using the vast number of open-source libraries available to python. 
+Staying within the scope of hacking and web automation I am going to use Scapy, and Abstract API to accomplish task such 
+as Network Analyzing, Port Scanning, and IP Location Finding.
+
+However, I also plan to use Flask to create a web framework 
+that will allow for users to perform these tasks online from a graphic interface rather than the normal use of a command line. 
+I plan to use techniques used in violent python to create this tool as well as expanding on a previous python project that 
+I developed to do similar tasks. 
+
+This project will have the ability to operate over any web browser which will allow for multiple OS to utilize the tool. 
+For the inner working of the web framework, I am going to use Bootstrap which will allow for faster front-end development, 
+so I can focus on the back end and getting the python to function and behave. 
+
+By the end of the project, I hope to have an interface that is built like a dashboard that has all the tools available in one place.
 
 ## _Execution Instruction_
 1. Clone or download repository
@@ -11,8 +24,12 @@ It uses Python, SQL, HTML, and Bootstrap. Users have the ability to create and a
 
    `pip install -r requirements.txt`
 
+3. Install node packages
+
+   `pip npm install express`
+
 ## _Configure Flask_
-    - Target: /RCMiniProjectThree/flaskr
+    - Target: /RCFinalProject_ViolentPy/flaskr
     - Application: create_app
     - FLASK_ENV: development
     - Flask (flaskr:create_app)
