@@ -4,6 +4,9 @@ import json
 import os.path
 import socket
 import sys
+import requests
+import pandas as pd
+
 from datetime import datetime
 
 import psutil
@@ -20,6 +23,22 @@ bp = Blueprint('violentpy', __name__)
 
 @bp.route('/')
 def index():
+    def iplookup():
+        # Look up IP information using ipify
+        response_url = requests.get('https://api64.ipify.org?format=json').json()
+        # IP Address
+        return response_url["ip"]
+
+    ip_address = iplookup()
+    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+    # Print IP Information
+    ip_info = ip_address
+    ip_city = response.get("city")
+    ip_region = response.get("region")
+    ip_country = response.get("country_name")
+    ip_lat = response.get("latitude")
+    ip_long = response.get("longitude")
+
     # Returns a tuple
     battery = psutil.sensors_battery()
 
@@ -34,11 +53,37 @@ def index():
     # Convert seconds to hh:mm:ss
     print("Battery left: ", battery_percentage(battery.secsleft))
 
-    with open('ports.csv') as file:
-        reader = csv.reader(file)
-        header = next(reader)
+    # Read Date from IP Scan CSV
+    ipscans = pd.read_csv("ip_scan.csv")
 
-    return render_template('violentpy/index.html', percent=percent, plugged=power, left=remaining, header=header, rows=reader)
+    iplist = list(ipscans.values)
+
+    # Check DataFrame is empty
+    if ipscans.empty:
+        print('IP Scan Has No Data')
+        # Do something when DF is empty
+    else:
+        print('IP Scan Has Data')
+        # Proceed with regular operation
+
+    # Read Date from IP Scan CSV
+    portscans = pd.read_csv("ports.csv")
+
+    portlist = list(portscans.values)
+
+    # Check DataFrame is empty
+    if portscans.empty:
+        print('Port Scan Has No Data')
+        # Do something when DF is empty
+    else:
+        print('Port Scan Has Data')
+
+        # Proceed with regular operation
+
+    return render_template('violentpy/index.html', percent=percent, plugged=power,
+                           left=remaining, ip=ip_info, city=ip_city, region=ip_region,
+                           country=ip_country, lat=ip_lat, long=ip_long, iplist=iplist,
+                           portlist=portlist)
 
 
 exc = getattr(builtins, "IOError", "FileNotFoundError")

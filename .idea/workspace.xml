@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a82375-e15c-4a76-9dcd-633415020b12" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/templates/violentpy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/violentpy/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/violentpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/violentpy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip_scan.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ip_scan.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ports.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ports.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +27,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/rydercook/Documents/GitHub/RCFinalProject_ViolentPy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rydercook/Documents/GitHub/RCFinalProject_ViolentPy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Flask (/RCFinalProject_ViolentPy/flaskr:create_app)" type="Python.FlaskServer" nameIsGenerated="true">
       <option name="application" value="create_app" />
@@ -64,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670803737472</updated>
       <workItem from="1670803739536" duration="1171000" />
+      <workItem from="1670860767477" duration="12644000" />
     </task>
     <task id="LOCAL-00001" summary="Read Me Update">
       <created>1670804645553</created>
@@ -81,5 +84,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Read Me Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Read Me Update" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RCFinalProject_ViolentPy$Flask___RCFinalProject_ViolentPy_flaskr_create_app_.coverage" NAME="Flask (/RCFinalProject_ViolentPy/flaskr:create_app) Coverage Results" MODIFIED="1670876858846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
