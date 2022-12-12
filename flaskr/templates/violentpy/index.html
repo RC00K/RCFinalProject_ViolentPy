@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+<title>{%  block title %}Tools{% endblock %} - Violent Python</title>
+{% block content %}
+<div class="container-fluid pt-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Battery Information</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Percentage</th>
+                                <th scope="col">Plugged In</th>
+                                <th scope="col">Time Left</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-success">{{ percent }}%</td>
+                                <td>{{ plugged }}</td>
+                                <td class="text-danger">{{ left }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Recent Port Scan</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                {% for col in header %}
+                                <th scope="col">{{ col }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Recent IP Scan</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Host Address</th>
+                                <th scope="col">IP Address</th>
+                                <th scope="col">MAC Address</th>
+                            </tr>
+                        </thead>
+                        {% for table in tables %}
+                        <tbody>
+                            <tr>
+                                <td>{{ table|safe }}</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

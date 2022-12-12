@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS portscan;
+DROP TABLE IF EXISTS ipscan;
+
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT
+);
+
+
+CREATE TABLE portscan (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    target_host TEXT NOT NULL,
+    port_num TEXT NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES portscan (id)
+);
+
+CREATE TABLE ipscan (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    gateway TEXT NOT NULL,
+    target_ip TEXT NOT NULL,
+    macaddress TEXT NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES ipscan (id)
+);

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+<title>{%  block title %}Home{% endblock %} - Violent Python</title>
+{% block content %}
+<div class="container-fluid pt-4">
+    <div class="row g-4">
+         <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Port Scanner</h6>
+                <form action="/port_scan" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="target" name="target" placeholder="Target IP" required>
+                        <div id="target" class="form-text">Example: 192.168.1.1</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">↓</span>
+                        <input type="number" class="form-control" id="portmin" name="range_low" placeholder="Min Port: 1" required>
+                        <span class="input-group-text">↑</span>
+                        <input type="number" class="form-control" id="portmax" name="range_high" placeholder="Max Port: 65535" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Scan</button>
+                </form>
+            </div>
+         </div>
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Scanned Ports {{ range_low }} to {{ range_high }} On: {{ target }}</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Port</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for port in portnum %}
+                            <tr>
+                                <td>{{ port }}</td>
+                                <td>{{ target }}</td>
+                                <td class="text-success">Open</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <h6 class="mb-4">Scan Completed In: {{ total }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">IP Scanner</h6>
+                <form action="/ip_scan" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="gateway" name="gateway" placeholder="Gateway IP" required>
+                        <div id="gateway" class="form-text">Example: 192.168.1.1/16 or 192.168.1.1/24</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Scan</button>
+                </form>
+            </div>
+         </div>
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Scanned: {{ gateway }}</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Host Address</th>
+                                <th scope="col">IP Address</th>
+                                <th scope="col">MAC Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for client in clients %}
+                            <tr>
+                                <td class="text-danger">{{ gateway }}</td>
+                                <td>{{ client['ip'] }}</td>
+                                <td>{{ client['mac'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <h6 class="mb-4">Scan Completed In: {{ totaltime }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
