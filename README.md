@@ -26,7 +26,7 @@ By the end of the project, I hope to have an interface that is built like a dash
 
 3. Install node packages
 
-   `pip npm install express`
+   `npm install express`
 
 ## _Configure Flask_
     - Target: /RCFinalProject_ViolentPy/flaskr
