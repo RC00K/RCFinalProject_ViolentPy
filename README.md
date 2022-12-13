@@ -4,7 +4,7 @@ Ryder Cook
 ## _Description_
 Using python for hacking and web automation task has become more frequent due to the ability 
 to write complex tasks using the vast number of open-source libraries available to python. 
-Staying within the scope of hacking and web automation I am going to use Scapy, and Abstract API to accomplish task such 
+Staying within the scope of hacking and web automation I am going to use Scapy, and ipify API to accomplish task such 
 as Network Analyzing, Port Scanning, and IP Location Finding.
 
 However, I also plan to use Flask to create a web framework 
@@ -41,3 +41,11 @@ By the end of the project, I hope to have an interface that is built like a dash
 
 ## _Run Project_
     - Start the app by clicking the ▶ button
+    
+## _Future Updates_
+1. ARP Spoofing
+2. DDoS Attacking
+4. MAC Address Changer
+5. Packet Analyzer
+6. Real Time Analytics
+
